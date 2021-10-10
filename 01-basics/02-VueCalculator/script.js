@@ -5,7 +5,10 @@ const vueApp = createApp({
     return {
       value1: 0,
       value2: 0,
-      //possible values [sum, subtract, multiply, divide]
+      characters: [{ symbol: '➕', value: 'sum' },
+                   { symbol: '➖', value: 'subtract' },
+                   { symbol: '✖', value: 'multiply' },
+                   { symbol: '➗', value: 'divide'}],
       operator_btn: 'sum',
     }
   },

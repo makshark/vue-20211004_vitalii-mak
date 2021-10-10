@@ -35,10 +35,9 @@
         </div>
 
         <div class="col" style="display: flex; flex-direction: column; font-family: emoji">
-          <label><input v-model='operator_btn' name="operator_btn" type="radio" value="sum" /> ➕</label>
-          <label><input v-model='operator_btn' name="operator_btn" type="radio" value="subtract" /> ➖</label>
-          <label><input v-model='operator_btn' name="operator_btn" type="radio" value="multiply" /> ✖</label>
-          <label><input v-model='operator_btn' name="operator_btn" type="radio" value="divide" /> ➗</label>
+          <template v-for="character in characters">
+              <label><input v-model='operator_btn' name="operator_btn" type="radio" v-bind:value=character.value /> {{character.symbol}}</label>
+          </template>
         </div>
 
         <div class="col">
