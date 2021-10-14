@@ -36,7 +36,7 @@
 
         <div class="col" style="display: flex; flex-direction: column; font-family: emoji">
           <template v-for="character in characters">
-              <label><input v-model='operator_btn' name="operator_btn" type="radio" v-bind:value=character.value /> {{character.symbol}}</label>
+              <label><input v-model='operator_btn' name="operator_btn" type="radio" :value=character.value /> {{ character.symbol }}</label>
           </template>
         </div>
 
