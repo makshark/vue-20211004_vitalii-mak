@@ -14,7 +14,7 @@ export default defineComponent({
   },
 
   template: `
-    <div class="meetup-cover" :style="[image ? { backgroundImage: 'url(' + image + ')' } : {}]">
+    <div class="meetup-cover" :style="image ? { backgroundImage: 'url(' + image + ')' } : {}">
         <h1 class="meetup-cover__title">{{ title }}</h1>
     </div>
     `,

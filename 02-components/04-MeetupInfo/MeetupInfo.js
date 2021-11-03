@@ -4,12 +4,15 @@ export default defineComponent({
   name: 'MeetupInfo',
   props: {
     organizer: {
+      type: String,
       required: true
     },
     place: {
+      type: String,
       required: true
     },
     date: {
+      type: Number,
       required: true
     }
   },
@@ -23,6 +26,12 @@ export default defineComponent({
       return res
     }
   },
+  methods: {
+    formatDatetimeAttribute(simpleDate) {
+      return simpleDate.toISOString().substr(0, 10)
+    }
+  },
+
 
   template: `
     <ul class="meetup-info">
@@ -36,7 +45,7 @@ export default defineComponent({
       </li>
       <li>
         <img class="icon meetup-info__icon" alt="icon" src="/assets/icons/icon-cal-lg.svg" />
-        <time v-bind:datetime="simpleDate.toISOString().substr(0, 10)"> {{ formatedDate }} </time>
+        <time :datetime="formatDatetimeAttribute(simpleDate)"> {{ formatedDate }} </time>
       </li>
     </ul>`,
 });

@@ -3,8 +3,10 @@ import { defineComponent } from './vendor/vue.esm-browser.js';
 export default defineComponent({
   name: 'CounterButton',
   props: {
-    count: Number,
-    default: 0
+    count: {
+      type: Number,
+      default: 0
+    }
   },
   methods: {
     updateCounter: function () {
@@ -19,5 +21,5 @@ export default defineComponent({
 
   // Шаблон потребуется отредактировать
 
-  template: `<button @click="updateCounter" type="button"> {{ count || 0 }}</button>`,
+  template: `<button @click="updateCounter" type="button"> {{ count }}</button>`,
 });
